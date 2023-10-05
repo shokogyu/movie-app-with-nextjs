@@ -34,7 +34,7 @@ export const ModalComponent = (props) => {
               })}
             </div>
             <p className="text-base font-light mt-5">{activeItem.overview}</p>
-            <p className="text-sm font-light mt-5 text-zinc-600">
+            <p className="text-sm font-light mt-2 text-zinc-600">
               Release Date : {activeItem.release_date}
             </p>
             <div className="w-full mt-10">
@@ -45,7 +45,7 @@ export const ModalComponent = (props) => {
                     <li key={cast.id} className="w-[70px] min-w-[70px]">
                       <img
                         src={`${TMDB_IMG_URL}${cast.profile_path}`}
-                        alt=""
+                        alt={cast.character}
                         className="w-full h-[70px] object-cover rounded-[50%] max-w-none"
                       />
                       <span className="block text-xs w-full truncate opacity-60">
