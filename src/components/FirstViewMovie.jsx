@@ -4,12 +4,13 @@ import { TMDB_API_URL, TMDB_IMG_URL } from "@/utils/const";
 
 export const FirstViewMovie = () => {
   const { data, error, isLoading } = useFetchData(`${TMDB_API_URL}/movie/top_rated`);
-  const firstData = data?.results.slice(0, 1)[0];
+  const firstData = data?.results.slice(0, 1)[0]; // 1位のデータのみ抽出
 
   if (isLoading) {
     return "Loading...";
   }
 
+  // 背景に使う画像の絶対パスを生成
   const backgroundImage = TMDB_IMG_URL + firstData.backdrop_path;
 
   return (

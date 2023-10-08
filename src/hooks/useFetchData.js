@@ -19,10 +19,13 @@ export const useFetchData = (url) => {
   return { data, error, isLoading };
 };
 
+// 映画のジャンル一覧を取得
 const useGenres = () => {
   return useFetchData("https://api.themoviedb.org/3/genre/movie/list");
 };
 
+
+// ジャンルIDからジャンル名を取得
 export const useGenreNameByGenreId = (movieGenreIdArray) => {
   const { data, error, isLoading } = useGenres();
 
@@ -35,6 +38,7 @@ export const useGenreNameByGenreId = (movieGenreIdArray) => {
   return { results };
 };
 
+// 映画IDから出演しているキャストを取得
 export const useCastByMovieId = (movieId) => {
   const { data, error, isLoading } = useFetchData(
     `https://api.themoviedb.org/3/movie/${movieId}/credits`
