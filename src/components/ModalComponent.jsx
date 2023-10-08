@@ -42,16 +42,18 @@ export const ModalComponent = (props) => {
               <ul className="w-full overflow-x-auto flex gap-4 mt-2">
                 {cast?.map((cast) => {
                   return (
-                    <li key={cast.id} className="w-[70px] min-w-[70px]">
-                      <img
-                        src={`${TMDB_IMG_URL}${cast.profile_path}`}
-                        alt={cast.character}
-                        className="w-full h-[70px] object-cover rounded-[50%] max-w-none"
-                      />
-                      <span className="block text-xs w-full truncate opacity-60">
-                        {cast.character}
-                      </span>
-                    </li>
+                    cast.profile_path && (
+                      <li key={cast.id} className="w-[70px] min-w-[70px]">
+                        <img
+                          src={`${TMDB_IMG_URL}${cast.profile_path}`}
+                          alt={cast.character}
+                          className="w-full h-[70px] object-cover rounded-[50%] max-w-none"
+                        />
+                        <span className="block text-xs w-full truncate opacity-60">
+                          {cast.character}
+                        </span>
+                      </li>
+                    )
                   );
                 })}
               </ul>
