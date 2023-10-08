@@ -1,21 +1,16 @@
-import { UpcomingMovie } from "@/components/UpcomingMovie";
-import { PopularMovie } from "@/components/PopularMovie";
 import { FirstViewMovie } from "@/components/FirstViewMovie";
 import { Inter } from "next/font/google";
-import { TopRatedMovie } from "@/components/TopRatedMovie";
+import { Row } from "@/components/Row";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  // console.log(data);
-  // console.log(data['data']['page']);
-
   return (
     <main className="">
       <FirstViewMovie />
-      <PopularMovie />
-      <TopRatedMovie />
-      <UpcomingMovie />
+      <Row title="人気の映画" movieType="popular" />
+      <Row title="評価の高い映画" movieType="top_rated" />
+      <Row title="上映予定の映画" movieType="upcoming" />
     </main>
   );
 }

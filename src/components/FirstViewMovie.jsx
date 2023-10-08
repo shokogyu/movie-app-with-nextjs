@@ -6,20 +6,14 @@ export const FirstViewMovie = () => {
   const { data, error, isLoading } = useFetchData(`${TMDB_API_URL}/movie/top_rated`);
   const firstData = data?.results.slice(0, 1)[0];
 
-
   if (isLoading) {
     return "Loading...";
   }
 
-  // console.log(firstData);
-  // if()
-
-  // const (data.results.slice(0, 10))
-  // showMovies(data.results.slice(0, 10))
   const backgroundImage = TMDB_IMG_URL + firstData.backdrop_path;
 
   return (
-    <div className="h-[60vh] max-h-[500px] relative p-10 overflow-hidden">
+    <div className="h-[60vh] max-h-[500px] relative p-10 overflow-hidden mb-7">
       <img src={backgroundImage} alt="" className="absolute top-0 left-0" />
       <div className="absolute top-2/4 w-2/5 translate-y-[-50%]">
         <h2 className="text-white text-6xl font-black drop-shadow-xl">{firstData.title}</h2>

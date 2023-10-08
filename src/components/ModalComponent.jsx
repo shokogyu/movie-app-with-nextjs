@@ -2,10 +2,10 @@ import { useCastByMovieId, useGenreNameByGenreId } from "@/hooks/useFetchData";
 import { TMDB_IMG_URL } from "@/utils/const";
 
 export const ModalComponent = (props) => {
-  const { isOpen, setIsOpen, activeItem } = props;
+  const { isOpen, setIsOpen, activeMovie } = props;
 
-  const { results } = useGenreNameByGenreId(activeItem.genre_ids);
-  const { cast, error, isLoading } = useCastByMovieId(activeItem.id);
+  const { results } = useGenreNameByGenreId(activeMovie.genre_ids);
+  const { cast, error, isLoading } = useCastByMovieId(activeMovie.id);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -20,10 +20,10 @@ export const ModalComponent = (props) => {
       <div className="bg-slate-900 w-3/4 m-auto relative top-2/4 translate-y-[-50%] rounded-lg overflow-hidden">
         <div className="flex">
           <div className="flex-shrink-0 flex-grow-0 basis-2/5 overflow-hidden">
-            <img src={`${TMDB_IMG_URL}${activeItem.poster_path}`} alt="" />
+            <img src={`${TMDB_IMG_URL}${activeMovie.poster_path}`} alt="" />
           </div>
           <div className="text-white p-9 basis-3/5 max-w-[60%]">
-            <p className="text-4xl font-bold">{activeItem.title}</p>
+            <p className="text-4xl font-bold">{activeMovie.title}</p>
             <div className="flex gap-2">
               {results?.map((genre) => {
                 return (
@@ -33,9 +33,9 @@ export const ModalComponent = (props) => {
                 );
               })}
             </div>
-            <p className="text-base font-light mt-5">{activeItem.overview}</p>
+            <p className="text-base font-light mt-5">{activeMovie.overview}</p>
             <p className="text-sm font-light mt-2 text-zinc-600">
-              Release Date : {activeItem.release_date}
+              Release Date : {activeMovie.release_date}
             </p>
             <div className="w-full mt-10">
               <div>Cast</div>
