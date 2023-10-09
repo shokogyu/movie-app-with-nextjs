@@ -23,7 +23,7 @@ export const EmblaCarousel = (props) => {
   };
 
   if (!props.movies) {
-    return "No Carousel Items...";
+    return <div className="text-white">映画情報がありません</div>;
   }
 
   return (
