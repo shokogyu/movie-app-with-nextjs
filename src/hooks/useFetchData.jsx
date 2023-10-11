@@ -43,7 +43,6 @@ export const useCastByMovieId = (movieId) => {
   const { data, error, isLoading } = useFetchData(
     `https://api.themoviedb.org/3/movie/${movieId}/credits`
   );
-  console.log(data);
   const cast = data?.cast;
 
   return {
