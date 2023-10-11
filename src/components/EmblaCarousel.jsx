@@ -27,7 +27,7 @@ export const EmblaCarousel = (props) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative min-h-[260px]">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {props.movies.map((movie) => {
