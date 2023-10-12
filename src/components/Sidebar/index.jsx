@@ -5,8 +5,10 @@ import React from "react";
 import { AiOutlineHome } from "@react-icons/all-files/ai/AiOutlineHome";
 import { BiCameraMovie } from "@react-icons/all-files/bi/BiCameraMovie";
 import { IconContext } from "@react-icons/all-files";
+import { useRouter } from "next/router";
 
 function Sidebar() {
+  const router = useRouter();
   const { data: genreList, error, isLoading } = useGenres();
 
   return (
@@ -43,6 +45,9 @@ function Sidebar() {
                     pathname: `/genre/${genre.id}`,
                     query: { name: genre.name },
                   }}
+                  className={
+                    router.asPath.startsWith(`/genre/${genre.id}`) ? "text-red-800 font-bold" : ""
+                  }
                 >
                   {genre.name}
                 </Link>
