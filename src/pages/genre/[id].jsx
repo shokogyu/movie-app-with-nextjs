@@ -8,10 +8,9 @@ import { useRouter } from "next/router";
 import React from "react";
 
 function Genre() {
+  const router = useRouter();
   const { data, error, isLoading } = useMoviesByGenreId();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
-
-  const router = useRouter();
 
   if (isLoading) {
     return <div>Loading...</div>;

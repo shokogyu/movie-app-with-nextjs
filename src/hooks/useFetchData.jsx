@@ -13,9 +13,11 @@ const fetcher = async (...args) => {
 
 export const useFetchData = (url, isJapanese = true) => {
   const language = isJapanese ? "language=ja-JA" : "en-US";
-  const params = url.match(/\?(.*)/)
-    ? `&api_key=${TMDB_API_KEY}&${language}`
-    : `?api_key=${TMDB_API_KEY}&${language}`;
+
+  const params =
+    url && url.match(/\?(.*)/)
+      ? `&api_key=${TMDB_API_KEY}&${language}`
+      : `?api_key=${TMDB_API_KEY}&${language}`;
 
   const API_URL = url + params;
 
