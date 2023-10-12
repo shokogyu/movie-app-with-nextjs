@@ -11,11 +11,13 @@ const fetcher = async (...args) => {
   return json;
 };
 
-export const useFetchData = (url) => {
-  const api_key_param = url.match(/\?(.*)/)
-    ? `&api_key=${TMDB_API_KEY}`
-    : `?api_key=${TMDB_API_KEY}`;
-  const API_URL = url + api_key_param;
+export const useFetchData = (url, isJapanese = true) => {
+  const language = isJapanese ? "language=ja-JA" : "en-US";
+  const params = url.match(/\?(.*)/)
+    ? `&api_key=${TMDB_API_KEY}&${language}`
+    : `?api_key=${TMDB_API_KEY}&${language}`;
+
+  const API_URL = url + params;
 
   const { data, error, isLoading } = useSWRImmutable(API_URL, fetcher);
 
@@ -24,7 +26,7 @@ export const useFetchData = (url) => {
 
 // 映画のジャンル一覧を取得
 export const useGenres = () => {
-  return useFetchData("https://api.themoviedb.org/3/genre/movie/list");
+  return useFetchData("https://api.themoviedb.org/3/genre/movie/list", false);
 };
 
 // ジャンルIDからジャンル名を取得
