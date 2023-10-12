@@ -1,6 +1,6 @@
 import { TMDB_API_KEY } from "@/utils/const";
 import useSWRImmutable from "swr/immutable";
-import useSWR from "swr";
+// import useSWR from "swr";
 
 const fetcher = async (...args) => {
   const response = await fetch(...args);
@@ -12,18 +12,20 @@ const fetcher = async (...args) => {
 };
 
 export const useFetchData = (url) => {
-  const API_URL = `${url}?api_key=${TMDB_API_KEY}`;
+  const api_key_param = url.match(/\?(.*)/)
+    ? `&api_key=${TMDB_API_KEY}`
+    : `?api_key=${TMDB_API_KEY}`;
+  const API_URL = url + api_key_param;
 
-  const { data, error, isLoading } = useSWR(API_URL, fetcher);
+  const { data, error, isLoading } = useSWRImmutable(API_URL, fetcher);
 
   return { data, error, isLoading };
 };
 
 // 映画のジャンル一覧を取得
-const useGenres = () => {
+export const useGenres = () => {
   return useFetchData("https://api.themoviedb.org/3/genre/movie/list");
 };
-
 
 // ジャンルIDからジャンル名を取得
 export const useGenreNameByGenreId = (movieGenreIdArray) => {
