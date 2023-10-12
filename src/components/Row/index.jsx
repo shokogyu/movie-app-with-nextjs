@@ -3,9 +3,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { TMDB_API_URL } from "@/utils/const";
 
 export const Row = (props) => {
-  const { data } = useFetchData(
-    props.movieType ? `${TMDB_API_URL}/movie/${props.movieType}` : null
-  );
+  const { data } = useFetchData(props.url ? props.url : null);
 
   return (
     <div>
