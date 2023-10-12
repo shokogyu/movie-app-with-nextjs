@@ -6,6 +6,7 @@ import { AiOutlineHome } from "@react-icons/all-files/ai/AiOutlineHome";
 import { BiCameraMovie } from "@react-icons/all-files/bi/BiCameraMovie";
 import { IconContext } from "@react-icons/all-files";
 import { useRouter } from "next/router";
+import SearchForm from "@/components/SearchForm";
 
 function Sidebar() {
   const router = useRouter();
@@ -14,6 +15,7 @@ function Sidebar() {
   return (
     <div className="w-[15%] min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
       <Logo />
+      <SearchForm />
 
       <section className="mt-8">
         <div className="flex items-center gap-2">
