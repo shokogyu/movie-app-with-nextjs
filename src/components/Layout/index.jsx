@@ -5,7 +5,7 @@ function Layout(props) {
   return (
     <div className="flex">
       <Sidebar />
-      <main className="pl-[15%]">{props.children}</main>
+      <main className="pl-[17%]">{props.children}</main>
     </div>
   );
 }

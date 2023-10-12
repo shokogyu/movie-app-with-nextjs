@@ -7,11 +7,11 @@ export const FirstViewMovie = () => {
   const firstData = data?.results.slice(0, 1)[0]; // 1位のデータのみ抽出
 
   if (isLoading) {
-    return <div className="text-white">Loading...</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div className="text-white">{error.message}</div>;
+    return <div>{error.message}</div>;
   }
 
   // 背景に使う画像の絶対パスを生成

@@ -12,8 +12,16 @@ function Sidebar() {
   const router = useRouter();
   const { data: genreList, error, isLoading } = useGenres();
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
-    <div className="w-[15%] min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
+    <div className="w-[17%] min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
       <Logo />
       <SearchForm />
 

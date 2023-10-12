@@ -14,16 +14,16 @@ function Genre() {
   const router = useRouter();
 
   if (isLoading) {
-    return <div className="text-white">Loading...</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div className="text-white">{error.message}</div>;
+    return <div>{error.message}</div>;
   }
 
   return (
     <Layout>
-      <div className="py-4">
+      <div className="py-6">
         <h1 className="text-3xl font-bold">{router.query.name}</h1>
         <ul className="grid grid-cols-5 mt-5 gap-2">
           {data?.results.map((movie) => {
