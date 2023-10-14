@@ -1,9 +1,8 @@
 import { ModalComponent } from "@/components/ModalComponent";
 import MovieThumbComponent from "@/components/MovieThumbComponent";
 import { useModal } from "@/hooks/useModal";
-import { TMDB_SM_IMG_URL } from "@/utils/const";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
 export const EmblaCarousel = (props) => {
   const OPTIONS = { loop: true, dragFree: true, align: "start" };
@@ -23,7 +22,7 @@ export const EmblaCarousel = (props) => {
   }
 
   return (
-    <div className="relative min-h-[260px]">
+    <div className="relative min-h-[260px] mt-3">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {props.movies.map((movie) => {
