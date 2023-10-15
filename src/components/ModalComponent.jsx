@@ -1,9 +1,12 @@
 import { MyListButton } from "@/components/MyList/MyListButton";
 import { useCastByMovieId, useGenreNameByGenreId } from "@/hooks/useFetchData";
+import { useMyList } from "@/hooks/useMyList";
 import { TMDB_IMG_URL } from "@/utils/const";
 
 export const ModalComponent = (props) => {
   const { isOpen, setIsOpen, activeMovie } = props;
+  const { state, dispatch } = useMyList();
+  // const { myList, handleToggle, isMyList } = useMyList();
 
   const { results } = useGenreNameByGenreId(activeMovie.genre_ids);
   const { cast, error, isLoading } = useCastByMovieId(activeMovie.id);
@@ -58,7 +61,17 @@ export const ModalComponent = (props) => {
                   );
                 })}
               </ul>
-              <MyListButton movie={activeMovie} />
+              <MyListButton
+                movie={activeMovie}
+                movieId={activeMovie.id}
+
+              />
+              {/* <MyListButton
+                movie={activeMovie}
+                myList={myList}
+                handleToggle={handleToggle}
+                isMyList={isMyList}
+              /> */}
             </div>
             <button onClick={toggleModal} className="absolute top-4 right-4">
               ✗

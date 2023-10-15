@@ -24,6 +24,7 @@ function SearchForm() {
           placeholder="検索キーワードを入力"
           className="rounded p-2 text-sm text-gray-900"
           onChange={(e) => handleChange(e.target.value)}
+        //   onKeyDown={() => handleClick()}
         />
         <button
           className="bg-red-800 rounded px-2 py-1 text-sm hover:opacity-90 transition-all"
