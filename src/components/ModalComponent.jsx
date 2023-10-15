@@ -5,9 +5,6 @@ import { TMDB_IMG_URL } from "@/utils/const";
 
 export const ModalComponent = (props) => {
   const { isOpen, setIsOpen, activeMovie } = props;
-  const { state, dispatch } = useMyList();
-  // const { myList, handleToggle, isMyList } = useMyList();
-
   const { results } = useGenreNameByGenreId(activeMovie.genre_ids);
   const { cast, error, isLoading } = useCastByMovieId(activeMovie.id);
 
@@ -61,17 +58,7 @@ export const ModalComponent = (props) => {
                   );
                 })}
               </ul>
-              <MyListButton
-                movie={activeMovie}
-                movieId={activeMovie.id}
-
-              />
-              {/* <MyListButton
-                movie={activeMovie}
-                myList={myList}
-                handleToggle={handleToggle}
-                isMyList={isMyList}
-              /> */}
+              <MyListButton movie={activeMovie} movieId={activeMovie.id} />
             </div>
             <button onClick={toggleModal} className="absolute top-4 right-4">
               ✗

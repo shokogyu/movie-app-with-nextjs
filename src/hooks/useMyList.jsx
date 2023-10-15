@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 
 export const useMyList = () => {
   const initialState = {
@@ -7,44 +7,42 @@ export const useMyList = () => {
 
   const reducer = (state, action) => {
     switch (action.type) {
+      case "initial":
+        return {
+          ...state,
+          myList: JSON.parse(localStorage.getItem("myList")) || [],
+        };
+
       case "add":
-        console.log("add");
+        const newList = [].concat(state.myList, action.data);
+        localStorage.setItem("myList", JSON.stringify(newList)); //TODO myListに変更あったタイミングで変わるようにHooks使いたい？
+
         return {
-          myList: [].concat(state.myList, action.data),
+          ...state,
+          myList: newList,
         };
+
       case "remove":
-        console.log("remove");
+        const filteredList = state.myList.filter((movie) => {
+          return movie.id !== action.data.id;
+        });
+
+        localStorage.setItem("myList", JSON.stringify(filteredList));
         return {
-          // ...state,
-          // myList: { ...state, ...action.data, ...action.data },
+          ...state,
+          myList: filteredList,
         };
+
+      default:
+        throw new Error("No such an action type");
     }
   };
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state.myList);
-  // const [myList, setMyList] = useState([]);
-  // const [isMyList, setIsMyList] = useState(false);
-
-  // const handleToggle = (movie) => {
-  //   console.log(myList);
-  //   console.log(movie);
-
-  //   // クリックされた映画がすでにMyListに登録されている場合
-  //   if (myList.some((myList) => myList.id === movie.id)) {
-  //     // MyListから除去する
-  //     setMyList((myList) => {
-  //       const newMyList = myList.filter((myList) => myList.id !== movie.id);
-  //       return newMyList;
-  //     });
-  //     setIsMyList(false);
-  //   } else {
-  //     setMyList((prevList) => {
-  //       return [...prevList, movie];
-  //     });
-  //     setIsMyList(true);
-  //   }
-  // };
+  // const updateMyList = useCallback(() => {
+  //   localStorage.setItem("myList", JSON.stringify(state.myList));
+  // }, [state.myList]);
 
   return { state, dispatch };
 };
