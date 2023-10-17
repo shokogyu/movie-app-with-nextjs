@@ -1,12 +1,10 @@
-import { MyListButton } from "@/components/MyList/MyListButton";
-import { useCastByMovieId, useGenreNameByGenreId } from "@/hooks/useFetchData";
-import { useMyList } from "@/hooks/useMyList";
+import { Cast } from "@/components/Cast";
+import { useGenreNameByGenreId } from "@/hooks/useFetchData";
 import { TMDB_IMG_URL } from "@/utils/const";
 
 export const ModalComponent = (props) => {
   const { isOpen, setIsOpen, activeMovie } = props;
   const { results } = useGenreNameByGenreId(activeMovie.genre_ids);
-  const { cast, error, isLoading } = useCastByMovieId(activeMovie.id);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -38,28 +36,7 @@ export const ModalComponent = (props) => {
             <p className="text-sm font-light mt-2 text-zinc-600">
               Release Date : {activeMovie.release_date}
             </p>
-            <div className="w-full mt-10">
-              <div>Cast</div>
-              <ul className="w-full overflow-x-auto flex gap-4 mt-2">
-                {cast?.map((cast) => {
-                  return (
-                    cast.profile_path && (
-                      <li key={cast.id} className="w-[70px] min-w-[70px]">
-                        <img
-                          src={`${TMDB_IMG_URL}${cast.profile_path}`}
-                          alt={cast.character}
-                          className="w-full h-[70px] object-cover rounded-[50%] max-w-none"
-                        />
-                        <span className="block text-xs w-full truncate opacity-60">
-                          {cast.character}
-                        </span>
-                      </li>
-                    )
-                  );
-                })}
-              </ul>
-              <MyListButton movie={activeMovie} movieId={activeMovie.id} />
-            </div>
+            <Cast movie={activeMovie} />
             <button onClick={toggleModal} className="absolute top-4 right-4">
               ✗
             </button>
