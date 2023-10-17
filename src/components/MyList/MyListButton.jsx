@@ -7,8 +7,6 @@ import { MyListContext } from "@/pages/_app";
 export const MyListButton = (props) => {
   const { state, dispatch } = useContext(MyListContext);
 
-  console.log(state.myList);
-
   return (
     <IconContext.Provider value={{ color: "#df006c", className: "text-xl" }}>
       {state.myList && state.myList.some((prevList) => prevList.id === props.movie.id) ? (

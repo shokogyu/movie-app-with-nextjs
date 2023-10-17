@@ -1,9 +1,8 @@
 import Layout from "@/components/Layout";
 import { ModalComponent } from "@/components/ModalComponent";
 import MovieThumbComponent from "@/components/MovieThumbComponent";
-import { useMoviesByGenreId } from "@/hooks/Discover/useMoviesByGenreId";
 import { useModal } from "@/hooks/useModal";
-import { TMDB_SM_IMG_URL } from "@/utils/const";
+import { useMoviesByGenreId } from "@/hooks/useMoviesByGenreId";
 import { useRouter } from "next/router";
 import React from "react";
 
