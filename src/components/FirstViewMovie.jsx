@@ -1,5 +1,5 @@
-import { EmblaCarousel } from "@/components/EmblaCarousel";
-import { useFetchData, useGenreNameByGenreId } from "@/hooks/useFetchData";
+import { MyListButton } from "@/components/MyList/MyListButton";
+import { useFetchData } from "@/hooks/useFetchData";
 import { TMDB_API_URL, TMDB_IMG_URL } from "@/utils/const";
 
 export const FirstViewMovie = () => {
@@ -23,6 +23,7 @@ export const FirstViewMovie = () => {
       <div className="absolute top-2/4 w-2/5 translate-y-[-50%]">
         <h2 className="text-white text-6xl font-black drop-shadow-xl">{firstData.title}</h2>
         <p className="text-white text-base mt-4  drop-shadow-xl">{firstData.overview}</p>
+        <MyListButton movie={firstData} />
       </div>
       <div className="bg-gradient-to-b from-transparent to-black h-20 w-[100vw] absolute left-0 bottom-0"></div>
     </div>
