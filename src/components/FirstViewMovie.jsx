@@ -20,12 +20,12 @@ export const FirstViewMovie = () => {
   return (
     <div className="h-[60vh] max-h-[500px] relative p-10 overflow-hidden mb-7">
       <img src={backgroundImage} alt="" className="absolute top-0 left-0" />
-      <div className="absolute top-2/4 w-2/5 translate-y-[-50%]">
+      <div className="absolute top-2/4 w-2/5 -translate-y-2/4">
         <h2 className="text-white text-6xl font-black drop-shadow-xl">{firstData.title}</h2>
         <p className="text-white text-base mt-4  drop-shadow-xl">{firstData.overview}</p>
         <MyListButton movie={firstData} />
       </div>
-      <div className="bg-gradient-to-b from-transparent to-black h-20 w-[100vw] absolute left-0 bottom-0"></div>
+      <div className="bg-gradient-to-b from-transparent to-black h-20 w-screen absolute left-0 bottom-0"></div>
     </div>
   );
 };

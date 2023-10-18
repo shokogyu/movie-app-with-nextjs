@@ -20,11 +20,11 @@ export const Cast = (props) => {
         {cast?.map((cast) => {
           return (
             cast.profile_path && (
-              <li key={cast.id} className="w-[70px] min-w-[70px]">
+              <li key={cast.id} className="w-16 min-w-[4rem]">
                 <img
                   src={`${TMDB_IMG_URL}${cast.profile_path}`}
                   alt={cast.character}
-                  className="w-full h-[70px] object-cover rounded-[50%] max-w-none"
+                  className="w-full h-16 object-cover rounded-full max-w-none"
                 />
                 <span className="block text-xs w-full truncate opacity-60">{cast.character}</span>
               </li>

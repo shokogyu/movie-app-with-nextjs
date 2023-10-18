@@ -22,7 +22,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="w-[17%] min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
+    <div className="w-64 min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
       <Logo />
       <SearchForm />
 
@@ -60,7 +60,7 @@ function Sidebar() {
             return (
               <li
                 key={genre.id}
-                className="before:content-[''] before:bg-gray-600 before:w-3 before:h-[1px] before:block flex items-center text-gray-400 gap-2 hover:text-white cursor-pointer"
+                className="before:content-[''] before:bg-gray-600 before:w-3 before:h-px before:block flex items-center text-gray-400 gap-2 hover:text-white cursor-pointer"
               >
                 <Link
                   href={{

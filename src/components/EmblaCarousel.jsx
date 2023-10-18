@@ -29,7 +29,7 @@ export const EmblaCarousel = (props) => {
             return (
               <div
                 key={movie.id}
-                className="embla__slide relative min-w-0 flex-shrink-0 flex-grow-0 basis-[17%]"
+                className="embla__slide relative min-w-0 flex-shrink-0 flex-grow-0 basis-1/5"
                 onClick={() => handleClick(movie)}
               >
                 <MovieThumbComponent movie={movie} />
@@ -40,13 +40,13 @@ export const EmblaCarousel = (props) => {
         <ModalComponent isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
       </div>
       <button
-        className="embla__prev bg-gray-900 text-white rounded-full w-10 h-10 absolute top-2/4 left-6 translate-y-[-65%]"
+        className="embla__prev bg-gray-900 text-white rounded-full w-10 h-10 absolute top-2/4 left-6 -translate-y-2/3"
         onClick={scrollPrev}
       >
         ◀
       </button>
       <button
-        className="embla__next bg-gray-900 text-white rounded-full w-10 h-10 absolute top-2/4 right-6 translate-y-[-65%]"
+        className="embla__next bg-gray-900 text-white rounded-full w-10 h-10 absolute top-2/4 right-6 -translate-y-2/3"
         onClick={scrollNext}
       >
         ▶
