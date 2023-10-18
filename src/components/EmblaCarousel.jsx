@@ -4,8 +4,9 @@ import { useModal } from "@/hooks/useModal";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
 
+const OPTIONS = { loop: true, dragFree: true, align: "start" };
+
 export const EmblaCarousel = (props) => {
-  const OPTIONS = { loop: true, dragFree: true, align: "start" };
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS);
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
