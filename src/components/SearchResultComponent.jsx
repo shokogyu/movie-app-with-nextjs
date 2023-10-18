@@ -22,7 +22,7 @@ const SearchResultComponent = () => {
   }
 
   return (
-    <div className="py-6">
+    <div className="p-6">
       <h1 className="text-3xl font-bold">「 {router.query.keyword} 」の検索結果</h1>
       {data?.results.length === 0 ? (
         <div className="mt-10">
