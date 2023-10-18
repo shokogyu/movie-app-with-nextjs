@@ -1,15 +1,14 @@
-import Logo from "@/components/Sidebar/Logo";
-import { useGenres } from "@/hooks/useFetchData";
 import Link from "next/link";
-import React from "react";
+import { useGenres } from "@/hooks/useFetchData";
 import { AiOutlineHome } from "@react-icons/all-files/ai/AiOutlineHome";
 import { BiCameraMovie } from "@react-icons/all-files/bi/BiCameraMovie";
 import { IconContext } from "@react-icons/all-files";
 import { useRouter } from "next/router";
-import SearchForm from "@/components/SearchForm";
 import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
+import { Logo } from "@/components/Sidebar/Logo";
+import { SearchForm } from "@/components/SearchForm";
 
-function Sidebar() {
+export const Sidebar = () => {
   const router = useRouter();
   const { data: genreList, error, isLoading } = useGenres();
 
@@ -80,6 +79,4 @@ function Sidebar() {
       </section>
     </div>
   );
-}
-
-export default Sidebar;
+};

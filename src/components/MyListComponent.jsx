@@ -1,10 +1,10 @@
 import { ModalComponent } from "@/components/ModalComponent";
-import MovieThumbComponent from "@/components/MovieThumbComponent";
+import { MovieThumbComponent } from "@/components/MovieThumbComponent";
 import { useModal } from "@/hooks/useModal";
 import { useMyList } from "@/hooks/useMyList";
 import { useEffect } from "react";
 
-const MyListComponent = () => {
+export const MyListComponent = () => {
   const { state, dispatch } = useMyList();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
@@ -34,5 +34,3 @@ const MyListComponent = () => {
     </div>
   );
 };
-
-export default MyListComponent;

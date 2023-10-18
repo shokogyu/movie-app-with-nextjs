@@ -1,5 +1,5 @@
 import { ModalComponent } from "@/components/ModalComponent";
-import MovieThumbComponent from "@/components/MovieThumbComponent";
+import { MovieThumbComponent } from "@/components/MovieThumbComponent";
 import { useModal } from "@/hooks/useModal";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";

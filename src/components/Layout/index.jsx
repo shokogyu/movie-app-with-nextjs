@@ -1,13 +1,10 @@
-import Sidebar from "@/components/Sidebar";
-import React from "react";
+import { Sidebar } from "@/components/Sidebar";
 
-function Layout(props) {
+export const Layout = (props) => {
   return (
     <div className="flex">
       <Sidebar />
       <main className="pl-64">{props.children}</main>
     </div>
   );
-}
-
-export default Layout;
+};

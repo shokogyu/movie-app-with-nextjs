@@ -4,7 +4,7 @@ import { createContext, useEffect } from "react";
 
 export const MyListContext = createContext();
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const { state, dispatch } = useMyList();
 
   useEffect(() => {
@@ -16,3 +16,5 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
     </MyListContext.Provider>)
 }
+
+export default App

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useModal() {
+export const useModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMovie, setActiveMovie] = useState([]);
 
@@ -10,4 +10,4 @@ export function useModal() {
   };
 
   return { isOpen, setIsOpen, activeMovie, setActiveMovie, handleClick };
-}
+};

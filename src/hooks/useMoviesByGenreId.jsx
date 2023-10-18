@@ -2,7 +2,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { TMDB_API_URL } from "@/utils/const";
 import { useRouter } from "next/router";
 
-export function useMoviesByGenreId() {
+export const useMoviesByGenreId = () => {
   const router = useRouter();
 
   const { data, error, isLoading } = useFetchData(
@@ -12,4 +12,4 @@ export function useMoviesByGenreId() {
   );
 
   return { data, error, isLoading };
-}
+};

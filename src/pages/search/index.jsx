@@ -1,12 +1,12 @@
-import Layout from "@/components/Layout";
-import SearchResultComponent from "@/components/SearchResultComponent";
+import { Layout } from "@/components/Layout";
+import { SearchResultComponent } from "@/components/SearchResultComponent";
 
-function Search() {
+const Search = () => {
   return (
     <Layout>
       <SearchResultComponent />
     </Layout>
   );
-}
+};
 
 export default Search;

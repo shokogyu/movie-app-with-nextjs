@@ -1,5 +1,5 @@
 import { ModalComponent } from "@/components/ModalComponent";
-import MovieThumbComponent from "@/components/MovieThumbComponent";
+import { MovieThumbComponent } from "@/components/MovieThumbComponent";
 import { useModal } from "@/hooks/useModal";
 import { useMoviesByGenreId } from "@/hooks/useMoviesByGenreId";
 import { useRouter } from "next/router";

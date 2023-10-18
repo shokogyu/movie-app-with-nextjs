@@ -1,7 +1,6 @@
 import { TMDB_SM_IMG_URL } from "@/utils/const";
-import React from "react";
 
-function MovieThumbComponent(props) {
+export const MovieThumbComponent = (props) => {
   return (
     <div className="border border-4 border-transparent hover:border-red-800 transition-[border,opacity] duration-300 cursor-pointer rounded-lg group hover:opacity-80">
       <img
@@ -10,6 +9,4 @@ function MovieThumbComponent(props) {
       />
     </div>
   );
-}
-
-export default MovieThumbComponent;
+};

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Row } from "@/components/Row";
 import { MyList } from "@/components/MyList";
 import { TMDB_API_KEY, TMDB_API_URL } from "@/utils/const";
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home(props) {
+const Home = (props) => {
   return (
     <Layout>
       <FirstViewMovie />
@@ -40,4 +40,6 @@ export default function Home(props) {
       <Row title="近日公開予定の映画" data={props.upcomingData} />
     </Layout>
   );
-}
+};
+
+export default Home;
