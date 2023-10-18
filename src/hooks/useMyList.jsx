@@ -7,7 +7,7 @@ export const useMyList = () => {
 
   const reducer = (state, action) => {
     switch (action.type) {
-      case "initial":
+      case "load":
         return {
           ...state,
           myList: JSON.parse(localStorage.getItem("myList")) || [],

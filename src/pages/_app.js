@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   const { state, dispatch } = useMyList();
 
   useEffect(() => {
-    dispatch({ type: "initial" });
+    dispatch({ type: "load" });
   }, []);
 
   return (
