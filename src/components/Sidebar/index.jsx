@@ -7,6 +7,7 @@ import { BiCameraMovie } from "@react-icons/all-files/bi/BiCameraMovie";
 import { IconContext } from "@react-icons/all-files";
 import { useRouter } from "next/router";
 import SearchForm from "@/components/SearchForm";
+import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
 
 function Sidebar() {
   const router = useRouter();
@@ -32,6 +33,17 @@ function Sidebar() {
           </IconContext.Provider>
           <Link href="/" className="text-base font-bold">
             ホーム
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-8">
+        <div className="flex items-center gap-2">
+          <IconContext.Provider value={{ className: "text-xl" }}>
+            <AiOutlineHeart />
+          </IconContext.Provider>
+          <Link href="/mylist" className="text-base font-bold">
+            Myリスト
           </Link>
         </div>
       </section>
