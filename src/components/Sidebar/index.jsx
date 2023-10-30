@@ -56,6 +56,7 @@ export const Sidebar = () => {
         </div>
         <ul className="grid gap-1 pl-4 mt-2">
           {genreList?.genres.map((genre) => {
+            const isActive = router.asPath.startsWith(`/genre/${genre.id}`) ? true : false;
             return (
               <li
                 key={genre.id}
@@ -66,9 +67,7 @@ export const Sidebar = () => {
                     pathname: `/genre/${genre.id}`,
                     query: { name: genre.name },
                   }}
-                  className={
-                    router.asPath.startsWith(`/genre/${genre.id}`) ? "text-red-800 font-bold" : ""
-                  }
+                  className={isActive ? "text-red-800 font-bold" : ""}
                 >
                   {genre.name}
                 </Link>
