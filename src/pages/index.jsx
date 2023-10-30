@@ -16,6 +16,7 @@ export const getStaticProps = async () => {
     `${TMDB_API_URL}/movie/top_rated?api_key=${TMDB_API_KEY}&language=ja-JA`
   );
   const topRatedData = await res2.json();
+  const topRatedNo1Data = await topRatedData.results.slice(0, 1)[0]; // 1位のデータのみ抽出
 
   const res3 = await fetch(`${TMDB_API_URL}/movie/upcoming?api_key=${TMDB_API_KEY}&language=ja-JA`);
   const upcomingData = await res3.json();
@@ -24,6 +25,7 @@ export const getStaticProps = async () => {
     props: {
       popularData,
       topRatedData,
+      topRatedNo1Data,
       upcomingData,
     },
     revalidate: 3600, // 1 hour
@@ -33,7 +35,7 @@ export const getStaticProps = async () => {
 const Home = (props) => {
   return (
     <Layout>
-      <FirstViewMovie />
+      <FirstViewMovie data={props.topRatedNo1Data} />
       <MyList />
       <Row title="人気の映画" data={props.popularData} />
       <Row title="評価の高い映画" data={props.topRatedData} />
