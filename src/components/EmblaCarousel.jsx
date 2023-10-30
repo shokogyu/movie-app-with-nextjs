@@ -30,7 +30,7 @@ export const EmblaCarousel = (props) => {
             return (
               <div
                 key={movie.id}
-                className="embla__slide relative min-w-0 flex-shrink-0 flex-grow-0 basis-1/5"
+                className="embla__slide relative min-w-0 flex-shrink-0 flex-grow-0 basis-1/6"
                 onClick={() => handleClick(movie)}
               >
                 <MovieThumbComponent movie={movie} />
