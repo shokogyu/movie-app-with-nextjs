@@ -6,7 +6,7 @@ export const MyList = () => {
   const { state, dispatch } = useContext(MyListContext);
 
   if (state.myList.length === 0) {
-    return;
+    return null;
   }
 
   return (
