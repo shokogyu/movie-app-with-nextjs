@@ -24,20 +24,20 @@ export const Genre = () => {
         </IconContext.Provider>
         <span className="text-base font-bold">ジャンル</span>
       </div>
-      <ul className="grid gap-1 pl-4 mt-2">
+      <ul className="mt-2 grid gap-1 pl-4">
         {data?.genres.map((genre) => {
           const isActive = router.asPath.startsWith(`/genre/${genre.id}`) ? true : false;
           return (
             <li
               key={genre.id}
-              className="before:content-[''] before:bg-gray-600 before:w-3 before:h-px before:block flex items-center text-gray-400 gap-2 hover:text-white cursor-pointer"
+              className="flex cursor-pointer items-center gap-2 text-gray-400 before:block before:h-px before:w-3 before:bg-gray-600 before:content-[''] hover:text-white"
             >
               <Link
                 href={{
                   pathname: `/genre/${genre.id}`,
                   query: { name: genre.name },
                 }}
-                className={isActive ? "text-red-800 font-bold" : ""}
+                className={isActive ? "font-bold text-red-800" : ""}
               >
                 {genre.name}
               </Link>

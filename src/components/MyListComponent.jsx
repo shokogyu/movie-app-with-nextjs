@@ -19,7 +19,7 @@ export const MyListComponent = () => {
         <div className="mt-10">Myリストはありません</div>
       ) : (
         <>
-          <ul className="grid grid-cols-5 mt-5 gap-2">
+          <ul className="mt-5 grid grid-cols-5 gap-2">
             {state.myList.map((movie) => {
               return (
                 <li key={movie.id} onClick={() => handleClick(movie)}>

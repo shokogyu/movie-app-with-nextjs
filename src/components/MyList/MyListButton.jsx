@@ -12,7 +12,7 @@ export const MyListButton = (props) => {
       {state.myList && state.myList.some((prevList) => prevList.id === props.movie.id) ? (
         <button
           onClick={() => dispatch({ type: "remove", data: props.movie })}
-          className="mt-7 border rounded-lg px-3 py-2 flex items-center gap-2 text-xs"
+          className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
         >
           <AiFillHeart />
           Myリスト保存済
@@ -20,7 +20,7 @@ export const MyListButton = (props) => {
       ) : (
         <button
           onClick={() => dispatch({ type: "add", data: props.movie })}
-          className="mt-7 border rounded-lg px-3 py-2 flex items-center gap-2 text-xs"
+          className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
         >
           <AiOutlineHeart />
           Myリスト追加

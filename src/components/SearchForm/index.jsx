@@ -27,7 +27,7 @@ export const SearchForm = () => {
           //   onKeyDown={() => handleClick()}
         />
         <button
-          className="bg-red-800 rounded px-2 py-1 text-sm hover:opacity-90 transition-all"
+          className="rounded bg-red-800 px-2 py-1 text-sm transition-all hover:opacity-90"
           onClick={() => handleClick()}
         >
           検索

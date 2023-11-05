@@ -11,7 +11,7 @@ export const MyList = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-white text-xl font-bold pl-3">Myリスト</h2>
+      <h2 className="pl-3 text-xl font-bold text-white">Myリスト</h2>
       <EmblaCarousel movies={state.myList} />
     </div>
   );

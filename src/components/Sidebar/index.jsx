@@ -6,7 +6,7 @@ import { MyList } from "@/components/Sidebar/Navs/MyList";
 
 export const Sidebar = () => {
   return (
-    <div className="w-64 min-w-[200px] shrink-0 fixed top-0 left-0 pl-6 pr-4 py-6">
+    <div className="fixed left-0 top-0 w-64 min-w-[200px] shrink-0 py-6 pl-6 pr-4">
       <Logo />
       <SearchForm />
 

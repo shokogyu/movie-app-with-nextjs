@@ -14,9 +14,9 @@ export const Cast = (props) => {
   }
 
   return (
-    <div className="w-full mt-10">
+    <div className="mt-10 w-full p-2">
       <div>Cast</div>
-      <ul className="w-full overflow-x-auto flex gap-4 mt-2">
+      <ul className="mt-2 flex w-full gap-4 overflow-x-auto">
         {cast?.map((cast) => {
           return (
             cast.profile_path && (
@@ -24,9 +24,9 @@ export const Cast = (props) => {
                 <img
                   src={`${TMDB_IMG_URL}${cast.profile_path}`}
                   alt={cast.character}
-                  className="w-full h-16 object-cover rounded-full max-w-none"
+                  className="h-16 w-full max-w-none rounded-full object-cover"
                 />
-                <span className="block text-xs w-full truncate opacity-60">{cast.character}</span>
+                <span className="block w-full truncate text-xs opacity-60">{cast.character}</span>
               </li>
             )
           );
