@@ -10,9 +10,9 @@ export const MyList = () => {
   }
 
   return (
-    <div className="mb-8">
+    <section>
       <h2 className="pl-3 text-xl font-bold text-white">Myリスト</h2>
       <EmblaCarousel movies={state.myList} />
-    </div>
+    </section>
   );
 };

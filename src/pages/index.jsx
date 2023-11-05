@@ -36,10 +36,12 @@ const Home = (props) => {
   return (
     <Layout>
       <FirstViewMovie data={props.topRatedNo1Data} />
-      <MyList />
-      <Row title="人気の映画" data={props.popularData} />
-      <Row title="評価の高い映画" data={props.topRatedData} />
-      <Row title="近日公開予定の映画" data={props.upcomingData} />
+      <div className="space-y-8">
+        <MyList />
+        <Row title="人気の映画" data={props.popularData} />
+        <Row title="評価の高い映画" data={props.topRatedData} />
+        <Row title="近日公開予定の映画" data={props.upcomingData} />
+      </div>
     </Layout>
   );
 };
