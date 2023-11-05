@@ -4,6 +4,7 @@
   "eslint.validate": ["javascript", "javascriptreact"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "prettier.tabWidth": 2,
   "prettier.printWidth": 100,
   "prettier.semi": true
