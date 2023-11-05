@@ -17,7 +17,7 @@ export const ModalComponent = (props) => {
   return (
     <dialog className="fixed left-0 top-0 z-10 block h-screen w-full bg-black/50">
       <div className="relative top-2/4 m-auto w-3/4 -translate-y-2/4 overflow-hidden rounded-lg bg-slate-900">
-        <div className="flex max-h-[80vh]">
+        <div className="flex h-[78vh]">
           <div className="shrink-0 grow-0 basis-2/5 overflow-hidden">
             <img src={`${TMDB_IMG_URL}${activeMovie.poster_path}`} alt="" />
           </div>
