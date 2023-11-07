@@ -1,10 +1,10 @@
-import { GenreComponent } from "@/components/GenreComponent";
+import { GenrePage } from "@/components/Genre/GenrePage";
 import { Layout } from "@/components/Layout";
 
 const Genre = (props) => {
   return (
     <Layout>
-      <GenreComponent />
+      <GenrePage />
     </Layout>
   );
 };

@@ -1,7 +1,7 @@
 import { FirstViewMovie } from "@/components/FirstViewMovie";
 import { Inter } from "next/font/google";
 import { Row } from "@/components/Row";
-import { MyList } from "@/components/MyList";
+import { MyListRow } from "@/components/MyList/MyListRow";
 import { TMDB_API_KEY, TMDB_API_URL } from "@/utils/const";
 import { Layout } from "@/components/Layout";
 
@@ -37,7 +37,7 @@ const Home = (props) => {
     <Layout>
       <FirstViewMovie data={props.topRatedNo1Data} />
       <div className="space-y-8">
-        <MyList />
+        <MyListRow />
         <Row title="人気の映画" data={props.popularData} />
         <Row title="評価の高い映画" data={props.topRatedData} />
         <Row title="近日公開予定の映画" data={props.upcomingData} />

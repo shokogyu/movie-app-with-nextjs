@@ -1,10 +1,10 @@
 import { Layout } from "@/components/Layout";
-import { SearchResultComponent } from "@/components/SearchResultComponent";
+import SearchResult from "@/components/SearchResult";
 
 const Search = () => {
   return (
     <Layout>
-      <SearchResultComponent />
+      <SearchResult />
     </Layout>
   );
 };

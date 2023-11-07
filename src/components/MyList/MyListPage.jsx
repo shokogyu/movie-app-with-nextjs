@@ -1,9 +1,9 @@
-import { ModalComponent } from "@/components/ModalComponent";
-import { MovieThumbComponent } from "@/components/MovieThumbComponent";
+import { Modal } from "@/components/Modal";
+import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
 import { useModal } from "@/hooks/useModal";
 import { useMyList } from "@/hooks/useMyList";
 
-export const MyListComponent = () => {
+export const MyListPage = () => {
   const { value: myList } = useMyList();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
@@ -18,12 +18,12 @@ export const MyListComponent = () => {
             {myList.map((movie) => {
               return (
                 <li key={movie.id} onClick={() => handleClick(movie)}>
-                  <MovieThumbComponent movie={movie} />
+                  <MovieThumbnail movie={movie} />
                 </li>
               );
             })}
           </ul>
-          <ModalComponent isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
         </>
       )}
     </div>

@@ -1,11 +1,11 @@
-import { ModalComponent } from "@/components/ModalComponent";
-import { MovieThumbComponent } from "@/components/MovieThumbComponent";
+import { Modal } from "@/components/Modal";
+import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
 import { useFetchData } from "@/hooks/useFetchData";
 import { useModal } from "@/hooks/useModal";
 import { TMDB_API_URL } from "@/utils/const";
 import { useRouter } from "next/router";
 
-export const SearchResultComponent = () => {
+const SearchResult = () => {
   const router = useRouter();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
@@ -36,14 +36,16 @@ export const SearchResultComponent = () => {
             {data?.results.map((movie) => {
               return (
                 <li key={movie.id} onClick={() => handleClick(movie)}>
-                  <MovieThumbComponent movie={movie} />
+                  <MovieThumbnail movie={movie} />
                 </li>
               );
             })}
           </ul>
-          <ModalComponent isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
         </>
       )}
     </div>
   );
 };
+
+export default SearchResult;

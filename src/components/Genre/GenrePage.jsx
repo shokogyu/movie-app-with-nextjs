@@ -1,10 +1,10 @@
-import { ModalComponent } from "@/components/ModalComponent";
-import { MovieThumbComponent } from "@/components/MovieThumbComponent";
+import { Modal } from "@/components/Modal";
+import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
 import { useModal } from "@/hooks/useModal";
 import { useMoviesByGenreId } from "@/hooks/useMoviesByGenreId";
 import { useRouter } from "next/router";
 
-export const GenreComponent = (props) => {
+export const GenrePage = (props) => {
   const router = useRouter();
   const { data, error, isLoading } = useMoviesByGenreId();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
@@ -24,12 +24,12 @@ export const GenreComponent = (props) => {
         {data?.results.map((movie) => {
           return (
             <li key={movie.id} onClick={() => handleClick(movie)}>
-              <MovieThumbComponent movie={movie} />
+              <MovieThumbnail movie={movie} />
             </li>
           );
         })}
       </ul>
-      <ModalComponent isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
     </div>
   );
 };

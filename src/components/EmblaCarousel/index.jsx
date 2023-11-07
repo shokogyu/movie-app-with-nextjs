@@ -1,5 +1,5 @@
-import { ModalComponent } from "@/components/ModalComponent";
-import { MovieThumbComponent } from "@/components/MovieThumbComponent";
+import { Modal } from "@/components/Modal";
+import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
 import { useModal } from "@/hooks/useModal";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
@@ -33,12 +33,12 @@ export const EmblaCarousel = (props) => {
                 className="embla__slide relative min-w-0 shrink-0 grow-0 basis-1/6"
                 onClick={() => handleClick(movie)}
               >
-                <MovieThumbComponent movie={movie} />
+                <MovieThumbnail movie={movie} />
               </div>
             );
           })}
         </div>
-        <ModalComponent isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
       </div>
       <button
         className="embla__prev absolute left-6 top-2/4 h-10 w-10 -translate-y-2/3 rounded-full bg-gray-900 text-white"

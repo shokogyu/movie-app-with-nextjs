@@ -3,7 +3,7 @@ import { MyListButton } from "@/components/MyList/MyListButton";
 import { useGenreNameByGenreId } from "@/hooks/useFetchData";
 import { TMDB_IMG_URL } from "@/utils/const";
 
-export const ModalComponent = (props) => {
+export const Modal = (props) => {
   const { isOpen, setIsOpen, activeMovie } = props;
   const { results } = useGenreNameByGenreId(activeMovie.genre_ids);
 

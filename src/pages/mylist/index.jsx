@@ -1,10 +1,10 @@
 import { Layout } from "@/components/Layout";
-import { MyListComponent } from "@/components/MyListComponent";
+import { MyListPage } from "@/components/MyList/MyListPage";
 
 const MyList = () => {
   return (
     <Layout>
-      <MyListComponent />
+      <MyListPage />
     </Layout>
   );
 };

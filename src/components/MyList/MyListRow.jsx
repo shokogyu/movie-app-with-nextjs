@@ -1,7 +1,7 @@
 import { EmblaCarousel } from "@/components/EmblaCarousel";
 import { useMyList } from "@/hooks/useMyList";
 
-export const MyList = () => {
+export const MyListRow = () => {
   const { value: myList } = useMyList();
 
   if (!myList || myList.length === 0) {

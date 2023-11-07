@@ -1,6 +1,6 @@
 import {  TMDB_SM_IMG_URL } from "@/utils/const";
 
-export const MovieThumbComponent = (props) => {
+export const MovieThumbnail = (props) => {
   const thumbnailUrl = props.movie.poster_path
     ? TMDB_SM_IMG_URL + props.movie.poster_path
     : "/noimage.png";
