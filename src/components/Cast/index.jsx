@@ -1,4 +1,3 @@
-import { MyListButton } from "@/components/MyList/MyListButton";
 import { useCastByMovieId } from "@/hooks/useFetchData";
 import { TMDB_IMG_URL } from "@/utils/const";
 
@@ -14,7 +13,7 @@ export const Cast = (props) => {
   }
 
   return (
-    <div className="mt-10 w-full p-2">
+    <>
       <div>Cast</div>
       <ul className="mt-2 flex w-full gap-4 overflow-x-auto">
         {cast?.map((cast) => {
@@ -32,7 +31,6 @@ export const Cast = (props) => {
           );
         })}
       </ul>
-      <MyListButton movie={props.movie} movieId={props.movie.id} />
-    </div>
+    </>
   );
 };

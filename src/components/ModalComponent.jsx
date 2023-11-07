@@ -1,4 +1,5 @@
 import { Cast } from "@/components/Cast";
+import { MyListButton } from "@/components/MyList/MyListButton";
 import { useGenreNameByGenreId } from "@/hooks/useFetchData";
 import { TMDB_IMG_URL } from "@/utils/const";
 
@@ -36,7 +37,10 @@ export const ModalComponent = (props) => {
             <p className="mt-2 text-sm font-light text-zinc-600">
               Release Date : {activeMovie.release_date}
             </p>
-            <Cast movie={activeMovie} />
+            <div className="mt-10 w-full p-2">
+              <Cast movie={activeMovie} />
+              <MyListButton movie={activeMovie} movieId={activeMovie.id} />
+            </div>
             <button onClick={toggleModal} className="absolute right-4 top-4">
               ✗
             </button>
