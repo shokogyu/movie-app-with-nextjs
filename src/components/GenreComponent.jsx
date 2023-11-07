@@ -4,7 +4,7 @@ import { useModal } from "@/hooks/useModal";
 import { useMoviesByGenreId } from "@/hooks/useMoviesByGenreId";
 import { useRouter } from "next/router";
 
-export const GenreComponent = () => {
+export const GenreComponent = (props) => {
   const router = useRouter();
   const { data, error, isLoading } = useMoviesByGenreId();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();

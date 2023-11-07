@@ -1,7 +1,7 @@
 import { GenreComponent } from "@/components/GenreComponent";
 import { Layout } from "@/components/Layout";
 
-const Genre = () => {
+const Genre = (props) => {
   return (
     <Layout>
       <GenreComponent />

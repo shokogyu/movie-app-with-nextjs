@@ -1,17 +1,28 @@
-import { useContext } from "react";
 import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
 import { AiFillHeart } from "@react-icons/all-files/ai/AiFillHeart";
 import { IconContext } from "@react-icons/all-files";
-import { MyListContext } from "@/pages/_app";
+import { useMyList } from "@/hooks/useMyList";
 
 export const MyListButton = (props) => {
-  const { state, dispatch } = useContext(MyListContext);
+  const { value: myList, set: setMyList } = useMyList();
+
+  const handleAdd = (movie) => {
+    setMyList((prevMyList) => [].concat(prevMyList, movie));
+  };
+
+  const handleRemove = (movie) => {
+    setMyList((prevMyList) => {
+      return prevMyList.filter((myListMovie) => {
+        return myListMovie.id !== movie.id;
+      });
+    });
+  };
 
   return (
     <IconContext.Provider value={{ color: "#df006c", className: "text-xl" }}>
-      {state.myList && state.myList.some((prevList) => prevList.id === props.movie.id) ? (
+      {myList && myList.some((prevMyList) => prevMyList.id === props.movie.id) ? (
         <button
-          onClick={() => dispatch({ type: "remove", data: props.movie })}
+          onClick={() => handleRemove(props.movie)}
           className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
         >
           <AiFillHeart />
@@ -19,7 +30,7 @@ export const MyListButton = (props) => {
         </button>
       ) : (
         <button
-          onClick={() => dispatch({ type: "add", data: props.movie })}
+          onClick={() => handleAdd(props.movie)}
           className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
         >
           <AiOutlineHeart />

@@ -1,18 +1,17 @@
 import { EmblaCarousel } from "@/components/EmblaCarousel";
-import { MyListContext } from "@/pages/_app";
-import { useContext } from "react";
+import { useMyList } from "@/hooks/useMyList";
 
 export const MyList = () => {
-  const { state, dispatch } = useContext(MyListContext);
+  const { value: myList } = useMyList();
 
-  if (state.myList.length === 0) {
+  if (!myList || myList.length === 0) {
     return null;
   }
 
   return (
     <section>
       <h2 className="pl-3 text-xl font-bold text-white">Myリスト</h2>
-      <EmblaCarousel movies={state.myList} />
+      <EmblaCarousel movies={myList} />
     </section>
   );
 };
