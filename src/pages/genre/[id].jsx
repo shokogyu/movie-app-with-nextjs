@@ -7,7 +7,7 @@ export const getStaticPaths = async () => {
     `${TMDB_API_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=en-US`
   );
   const genreListData = await res.json();
-  const paths = genreListData.genres.map((genre) => {
+  const paths = await genreListData.genres.map((genre) => {
     return {
       params: {
         id: genre.id.toString(),
