@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import SearchResult from "@/components/SearchResult";
+import SearchResult from "@/components/Search/SearchResult";
 import { TMDB_API_KEY, TMDB_API_URL } from "@/utils/const";
 
 export const getStaticProps = async () => {

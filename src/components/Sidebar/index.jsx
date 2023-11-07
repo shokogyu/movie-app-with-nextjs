@@ -1,5 +1,5 @@
 import { Logo } from "@/components/Sidebar/Logo";
-import { SearchForm } from "@/components/SearchForm";
+import { SearchForm } from "@/components/Search/SearchForm";
 import { Home } from "@/components/Sidebar/Navs/Home";
 import { Genres } from "@/components/Sidebar/Navs/Genres";
 import { MyList } from "@/components/Sidebar/Navs/MyList";
