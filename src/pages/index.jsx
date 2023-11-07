@@ -21,12 +21,18 @@ export const getStaticProps = async () => {
   const res3 = await fetch(`${TMDB_API_URL}/movie/upcoming?api_key=${TMDB_API_KEY}&language=ja-JA`);
   const upcomingData = await res3.json();
 
+  const res4 = await fetch(
+    `${TMDB_API_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=en-US`
+  );
+  const genreListData = await res4.json();
+
   return {
     props: {
       popularData,
       topRatedData,
       topRatedNo1Data,
       upcomingData,
+      genreListData,
     },
     revalidate: 3600, // 1 hour
   };
@@ -34,7 +40,7 @@ export const getStaticProps = async () => {
 
 const Home = (props) => {
   return (
-    <Layout>
+    <Layout genreListData={props.genreListData}>
       <FirstViewMovie data={props.topRatedNo1Data} />
       <div className="space-y-8">
         <MyListRow />

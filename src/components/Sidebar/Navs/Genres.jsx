@@ -1,20 +1,10 @@
-import { useGenres } from "@/hooks/useFetchData";
 import { IconContext } from "@react-icons/all-files";
 import { BiCameraMovie } from "@react-icons/all-files/bi/BiCameraMovie";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export const Genre = () => {
+export const Genres = (props) => {
   const router = useRouter();
-  const { data, error, isLoading } = useGenres();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
 
   return (
     <section>
@@ -25,7 +15,7 @@ export const Genre = () => {
         <span className="text-base font-bold">ジャンル</span>
       </div>
       <ul className="mt-2 grid gap-1 pl-4">
-        {data?.genres.map((genre) => {
+        {props.genreListData.genres.map((genre) => {
           const isActive = router.asPath.startsWith(`/genre/${genre.id}`) ? true : false;
           return (
             <li

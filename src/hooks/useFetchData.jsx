@@ -12,7 +12,7 @@ const fetcher = async (...args) => {
 };
 
 export const useFetchData = (url, isJapanese = true) => {
-  const language = isJapanese ? "language=ja-JA" : "en-US";
+  const language = isJapanese ? "language=ja-JA" : "language=en-US";
 
   const params =
     url && url.match(/\?(.*)/)
