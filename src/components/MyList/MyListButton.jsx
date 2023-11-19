@@ -18,9 +18,11 @@ export const MyListButton = (props) => {
     });
   };
 
+  const isAlreadyMyList = myList && myList.some((prevMyList) => prevMyList.id === props.movie.id);
+
   return (
     <IconContext.Provider value={{ color: "#df006c", className: "text-xl" }}>
-      {myList && myList.some((prevMyList) => prevMyList.id === props.movie.id) ? (
+      {isAlreadyMyList ? (
         <button
           onClick={() => handleRemove(props.movie)}
           className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
