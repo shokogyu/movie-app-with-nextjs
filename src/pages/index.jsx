@@ -9,22 +9,23 @@ const inter = Inter({ subsets: ["latin"] });
 
 // ISR対応
 export const getStaticProps = async () => {
-  const res = await fetch(`${TMDB_API_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=ja-JA`);
-  const popularData = await res.json();
+  const urls = [
+    `${TMDB_API_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=ja-JA`,
+    `${TMDB_API_URL}/movie/top_rated?api_key=${TMDB_API_KEY}&language=ja-JA`,
+    `${TMDB_API_URL}/movie/upcoming?api_key=${TMDB_API_KEY}&language=ja-JA`,
+    `${TMDB_API_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=en-US`,
+  ];
 
-  const res2 = await fetch(
-    `${TMDB_API_URL}/movie/top_rated?api_key=${TMDB_API_KEY}&language=ja-JA`
+  const results = await Promise.allSettled(
+    urls.map((url) => {
+      return fetch(url).then((res) => res.json());
+    })
   );
-  const topRatedData = await res2.json();
-  const topRatedNo1Data = await topRatedData.results.slice(0, 1)[0]; // 1位のデータのみ抽出
 
-  const res3 = await fetch(`${TMDB_API_URL}/movie/upcoming?api_key=${TMDB_API_KEY}&language=ja-JA`);
-  const upcomingData = await res3.json();
-
-  const res4 = await fetch(
-    `${TMDB_API_URL}/genre/movie/list?api_key=${TMDB_API_KEY}&language=en-US`
-  );
-  const genreListData = await res4.json();
+  const [popularData, topRatedData, upcomingData, genreListData] = results.map((result) => {
+    return result.status === "fulfilled" ? result.value : null;
+  });
+  const topRatedNo1Data = topRatedData.results[0]; // 1位のデータのみ抽出
 
   return {
     props: {
