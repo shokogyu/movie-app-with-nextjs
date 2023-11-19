@@ -4,7 +4,7 @@ export const Layout = (props) => {
   return (
     <div className="flex">
       <Sidebar genreListData={props.genreListData} />
-      <main className="pl-64">{props.children}</main>
+      <main className="flex-1 pl-64">{props.children}</main>
     </div>
   );
 };
