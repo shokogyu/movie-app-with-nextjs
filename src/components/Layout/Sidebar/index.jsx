@@ -13,7 +13,7 @@ export const Sidebar = (props) => {
       <nav className="mt-8 space-y-6">
         <Home />
         <MyList />
-        <Genres genreListData={props.genreListData} />
+        {props.children}
       </nav>
     </div>
   );
