@@ -5,7 +5,7 @@ import { useModal } from "@/hooks/useModal";
 import { TMDB_API_URL } from "@/utils/const";
 import { useRouter } from "next/router";
 
-const SearchResult = () => {
+export const SearchResult = () => {
   const router = useRouter();
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
@@ -47,5 +47,3 @@ const SearchResult = () => {
     </div>
   );
 };
-
-export default SearchResult;
