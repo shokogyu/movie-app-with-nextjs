@@ -7,7 +7,7 @@ export const MyListButton = (props) => {
   const { value: myList, set: setMyList } = useMyList();
 
   const handleAdd = (movie) => {
-    setMyList((prevMyList) => [].concat(prevMyList, movie));
+    setMyList((prevMyList) => [...prevMyList, movie]);
   };
 
   const handleRemove = (movie) => {
