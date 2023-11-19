@@ -1,8 +1,8 @@
-import { Logo } from "@/components/Sidebar/Logo";
+import { Logo } from "@/components/Layout/Sidebar/Logo";
 import { SearchForm } from "@/components/Search/SearchForm";
-import { Home } from "@/components/Sidebar/Navs/Home";
-import { Genres } from "@/components/Sidebar/Navs/Genres";
-import { MyList } from "@/components/Sidebar/Navs/MyList";
+import { Home } from "@/components/Layout/Sidebar/Navs/Home";
+import { Genres } from "@/components/Layout/Sidebar/Navs/Genres";
+import { MyList } from "@/components/Layout/Sidebar/Navs/MyList";
 
 export const Sidebar = (props) => {
   return (
