@@ -12,7 +12,7 @@ export const SearchForm = () => {
   const handleClick = useCallback(() => {
     router.push({
       pathname: "/search",
-      query: { keyword: keyword },
+      query: { keyword },
     });
   }, [keyword]);
 
