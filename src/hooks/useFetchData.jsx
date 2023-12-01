@@ -1,15 +1,7 @@
 import { TMDB_API_KEY } from "@/utils/const";
+import { fetcher } from "@/utils/fetcher";
 import useSWRImmutable from "swr/immutable";
 // import useSWR from "swr";
-
-const fetcher = async (...args) => {
-  const response = await fetch(...args);
-  if (!response.ok) {
-    throw new Error("エラーが発生したため、データの取得に失敗しました");
-  }
-  const json = await response.json();
-  return json;
-};
 
 export const useFetchData = (url, isJapanese = true) => {
   const language = isJapanese ? "language=ja-JA" : "language=en-US";

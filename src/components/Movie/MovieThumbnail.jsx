@@ -1,4 +1,4 @@
-import {  TMDB_SM_IMG_URL } from "@/utils/const";
+import { TMDB_SM_IMG_URL } from "@/utils/const";
 
 export const MovieThumbnail = (props) => {
   const thumbnailUrl = props.movie.poster_path
