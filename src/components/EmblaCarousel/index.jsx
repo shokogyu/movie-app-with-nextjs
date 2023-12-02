@@ -23,14 +23,14 @@ export const EmblaCarousel = (props) => {
   }
 
   return (
-    <div className="relative mt-3 min-h-[260px]">
+    <div className="relative mt-2 px-2 md:mt-3 md:min-h-[260px] md:px-0">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
           {props.movies.map((movie) => {
             return (
               <div
                 key={movie.id}
-                className="embla__slide relative min-w-0 shrink-0 grow-0 basis-1/6"
+                className="embla__slide relative min-w-0 shrink-0 grow-0 basis-2/5 md:basis-1/6"
                 onClick={() => handleClick(movie)}
               >
                 <MovieThumbnail movie={movie} />

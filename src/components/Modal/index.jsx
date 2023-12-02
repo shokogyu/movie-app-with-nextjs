@@ -20,18 +20,18 @@ export const Modal = (props) => {
     : "/noimage.png";
 
   return (
-    <dialog className="fixed left-0 top-0 z-10 block h-screen w-full bg-black/50">
-      <div className="relative top-2/4 m-auto w-3/4 -translate-y-2/4 overflow-hidden rounded-lg bg-slate-900">
-        <div className="flex h-[78vh]">
+    <dialog className="fixed left-0 top-0 z-10 block h-screen w-full bg-black/50 ">
+      <div className="relative top-1/2 m-auto w-11/12 -translate-y-2/4 overflow-y-auto rounded-lg bg-slate-900 md:top-2/4 md:w-3/4 md:overflow-hidden">
+        <div className="h-[78vh] md:flex">
           <div className="shrink-0 grow-0 basis-2/5 overflow-hidden">
             <img src={thumbnailUrl} alt="" />
           </div>
-          <div className="max-w-[60%] basis-3/5 overflow-y-auto p-9 pt-16 text-white">
-            <p className="text-4xl font-bold">{activeMovie.title}</p>
-            <div className="flex gap-2">
+          <div className="basis-3/5 overflow-y-auto px-4 py-6 text-white md:max-w-[60%] md:p-9 md:pt-16">
+            <p className="text-2xl font-bold md:text-4xl">{activeMovie.title}</p>
+            <div className="mt-3 flex flex-wrap gap-2">
               {results?.map((genre) => {
                 return (
-                  <span key={genre.id} className="mt-3 rounded-md bg-zinc-600 px-2 py-1 text-xs">
+                  <span key={genre.id} className="rounded-md bg-zinc-600 px-2 py-1 text-xs">
                     {genre.name}
                   </span>
                 );

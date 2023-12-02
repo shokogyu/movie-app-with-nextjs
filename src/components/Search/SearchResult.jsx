@@ -22,8 +22,8 @@ export const SearchResult = () => {
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold">「 {router.query.keyword} 」の検索結果</h1>
+    <div className="px-5 md:p-6">
+      <h1 className="text-xl font-bold md:text-3xl">「 {router.query.keyword} 」の検索結果</h1>
       {data[0].results.length === 0 ? (
         <div className="mt-10">
           検索ワードに該当するものが見つかりませんでした。
@@ -32,7 +32,7 @@ export const SearchResult = () => {
         </div>
       ) : (
         <>
-          <ul className="mt-5 grid grid-cols-5 gap-2">
+          <ul className="mt-1 grid grid-cols-2 gap-1 md:mt-5 md:grid-cols-5 md:gap-2">
             {data.map((data) => {
               return data.results.map((movie) => {
                 return (

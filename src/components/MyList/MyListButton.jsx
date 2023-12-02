@@ -18,14 +18,14 @@ export const MyListButton = (props) => {
     });
   };
 
-  const isAlreadyMyList = myList && myList.some((prevMyList) => prevMyList.id === props.movie.id);
+  const isAlreadyAdded = myList && myList.some((prevMyList) => prevMyList.id === props.movie.id);
 
   return (
-    <IconContext.Provider value={{ color: "#df006c", className: "text-xl" }}>
-      {isAlreadyMyList ? (
+    <IconContext.Provider value={{ color: "#df006c", className: "text-lg md:text-xl" }}>
+      {isAlreadyAdded ? (
         <button
           onClick={() => handleRemove(props.movie)}
-          className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
+          className="mt-7 flex items-center gap-2 rounded-lg border px-2 py-1 text-[10px] md:px-3 md:py-2 md:text-xs"
         >
           <AiFillHeart />
           Myリスト保存済
@@ -33,7 +33,7 @@ export const MyListButton = (props) => {
       ) : (
         <button
           onClick={() => handleAdd(props.movie)}
-          className="mt-7 flex items-center gap-2 rounded-lg border px-3 py-2 text-xs"
+          className="mt-7 flex items-center gap-2 rounded-lg border px-2 py-1 text-[10px] md:px-3 md:py-2 md:text-xs"
         >
           <AiOutlineHeart />
           Myリスト追加

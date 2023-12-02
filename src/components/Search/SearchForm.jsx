@@ -21,19 +21,19 @@ export const SearchForm = () => {
   );
 
   return (
-    <section className="mt-10">
+    <section className="mt-3 md:mt-10">
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-1">
+        <div className="flex gap-1 md:flex-col">
           <input
             type="text"
             placeholder="検索キーワードを入力"
-            className="rounded p-2 text-sm text-gray-900"
+            className="w-9/12 rounded p-2 text-xs md:w-auto text-gray-900 md:p-2 md:text-sm"
             value={keyword}
             onChange={(e) => handleChange(e.target.value)}
           />
           <button
             type="submit"
-            className="rounded bg-red-800 px-2 py-1 text-sm transition-all hover:opacity-90"
+            className="flex-1 rounded bg-red-800 px-4 py-2 text-xs transition-all hover:opacity-90 md:px-2 md:py-1 md:text-sm"
           >
             検索
           </button>

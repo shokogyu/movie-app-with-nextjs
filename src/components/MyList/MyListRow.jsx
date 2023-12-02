@@ -10,7 +10,7 @@ export const MyListRow = () => {
 
   return (
     <section>
-      <h2 className="pl-3 text-xl font-bold text-white">Myリスト</h2>
+      <h2 className="px-3 text-base font-bold text-white md:pl-3 md:pr-0 md:text-xl">Myリスト</h2>
       <EmblaCarousel movies={myList} />
     </section>
   );

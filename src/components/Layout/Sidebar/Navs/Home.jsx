@@ -9,7 +9,7 @@ export const Home = () => {
         <IconContext.Provider value={{ className: "text-xl" }}>
           <AiOutlineHome />
         </IconContext.Provider>
-        <Link href="/" className="text-base font-bold">
+        <Link href="/" className="text-xs font-bold md:text-base">
           ホーム
         </Link>
       </div>
