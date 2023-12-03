@@ -20,7 +20,7 @@ export const Modal = (props) => {
     : "/noimage.png";
 
   return (
-    <dialog className="fixed left-0 top-0 z-10 block h-screen w-full bg-black/50 ">
+    <dialog className="fixed left-0 top-0 z-10 !mt-0 block h-screen w-full bg-black/50">
       <div className="relative top-1/2 m-auto w-11/12 -translate-y-2/4 overflow-y-auto rounded-lg bg-slate-900 md:top-2/4 md:w-3/4 md:overflow-hidden">
         <div className="h-[78vh] md:flex">
           <div className="shrink-0 grow-0 basis-2/5 overflow-hidden">

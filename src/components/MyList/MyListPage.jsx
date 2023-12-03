@@ -9,10 +9,10 @@ export const MyListPage = () => {
   const { isOpen, setIsOpen, activeMovie, handleClick } = useModal();
 
   return (
-    <div className="px-5 md:p-6">
+    <div className="space-y-3 px-5 md:space-y-5 md:p-6">
       <h1 className="text-2xl font-bold md:text-3xl">Myリスト</h1>
       {!myList || myList.length === 0 ? (
-        <div className="mt-10">Myリストはありません</div>
+        <div className="text-xs md:text-base">Myリストはありません</div>
       ) : (
         <>
           <GridLayout data={myList} handleClick={handleClick} isInfiniteScroll={false} />

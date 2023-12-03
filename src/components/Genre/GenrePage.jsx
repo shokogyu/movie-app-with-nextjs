@@ -25,11 +25,11 @@ export const GenrePage = () => {
   }
 
   return (
-    <div className="px-5 md:p-6">
+    <div className="space-y-3 px-5 md:space-y-5 md:p-6">
       <h1 className="text-2xl font-bold md:text-3xl">{router.query.name}</h1>
 
       {data[0].results.length === 0 ? (
-        <div className="mt-10">お探しのジャンルの映画が見つかりませんでした。</div>
+        <div className="text-xs md:text-base">お探しのジャンルの映画が見つかりませんでした。</div>
       ) : (
         <>
           <GridLayout data={data} handleClick={handleClick} isInfiniteScroll={true} />

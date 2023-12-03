@@ -21,10 +21,10 @@ export const SearchResult = () => {
   }
 
   return (
-    <div className="px-5 md:p-6">
+    <div className="space-y-3 px-5 md:space-y-5 md:p-6">
       <h1 className="text-xl font-bold md:text-3xl">「 {router.query.keyword} 」の検索結果</h1>
       {data[0].results.length === 0 ? (
-        <div className="mt-10">
+        <div className="text-xs md:text-base">
           検索ワードに該当するものが見つかりませんでした。
           <br />
           別のキーワードをお試しください。
