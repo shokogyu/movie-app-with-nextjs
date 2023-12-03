@@ -1,7 +1,6 @@
+import { GridLayout } from "@/components/Layout/Grid";
 import { LoadMoreButton } from "@/components/LoadMore/LoadMoreButton";
 import { Modal } from "@/components/Modal";
-import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
-import { useFetchData } from "@/hooks/useFetchData";
 import { useInfiniteQuery } from "@/hooks/useInfiniteQuery";
 import { useModal } from "@/hooks/useModal";
 import { TMDB_API_URL } from "@/utils/const";
@@ -32,17 +31,7 @@ export const SearchResult = () => {
         </div>
       ) : (
         <>
-          <ul className="mt-1 grid grid-cols-2 gap-1 md:mt-5 md:grid-cols-5 md:gap-2">
-            {data.map((data) => {
-              return data.results.map((movie) => {
-                return (
-                  <li key={movie.id} onClick={() => handleClick(movie)}>
-                    <MovieThumbnail movie={movie} />
-                  </li>
-                );
-              });
-            })}
-          </ul>
+          <GridLayout data={data} handleClick={handleClick} isInfiniteScroll={true} />
           <LoadMoreButton isReachingEnd={isReachingEnd} setSize={setSize} />
           <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
         </>

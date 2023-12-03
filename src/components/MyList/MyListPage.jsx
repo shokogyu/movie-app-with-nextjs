@@ -1,3 +1,4 @@
+import { GridLayout } from "@/components/Layout/Grid";
 import { Modal } from "@/components/Modal";
 import { MovieThumbnail } from "@/components/Movie/MovieThumbnail";
 import { useModal } from "@/hooks/useModal";
@@ -14,15 +15,7 @@ export const MyListPage = () => {
         <div className="mt-10">Myリストはありません</div>
       ) : (
         <>
-          <ul className="mt-1 grid grid-cols-2 gap-1 md:mt-5 md:grid-cols-5 md:gap-2">
-            {myList.map((movie) => {
-              return (
-                <li key={movie.id} onClick={() => handleClick(movie)}>
-                  <MovieThumbnail movie={movie} />
-                </li>
-              );
-            })}
-          </ul>
+          <GridLayout data={myList} handleClick={handleClick} isInfiniteScroll={false} />
           <Modal isOpen={isOpen} setIsOpen={setIsOpen} activeMovie={activeMovie} />
         </>
       )}
