@@ -15,8 +15,12 @@ export const Modal = (props) => {
     return;
   }
 
-  const thumbnailUrl = activeMovie.poster_path
+  const verticalImg = activeMovie.poster_path
     ? TMDB_IMG_URL + activeMovie.poster_path
+    : "/noimage.png";
+
+  const horizontalImg = activeMovie.backdrop_path
+    ? TMDB_IMG_URL + activeMovie.backdrop_path
     : "/noimage.png";
 
   return (
@@ -24,7 +28,11 @@ export const Modal = (props) => {
       <div className="relative top-1/2 m-auto w-11/12 -translate-y-2/4 overflow-y-auto rounded-lg bg-slate-900 md:top-2/4 md:w-3/4 md:overflow-hidden">
         <div className="h-[78vh] md:flex">
           <div className="shrink-0 grow-0 basis-2/5 overflow-hidden">
-            <img src={thumbnailUrl} alt="" />
+            <picture>
+              <source media="(min-width: 768px)" srcset={verticalImg} />
+              <source media="(max-width: 767px)" srcset={horizontalImg} />
+              <img src={verticalImg} alt={activeMovie.title} />
+            </picture>
           </div>
           <div className="basis-3/5 overflow-y-auto px-4 py-6 text-white md:max-w-[60%] md:p-9 md:pt-16">
             <p className="text-2xl font-bold md:text-4xl">{activeMovie.title}</p>
