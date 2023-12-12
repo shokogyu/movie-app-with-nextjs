@@ -53,12 +53,21 @@ export const Modal = (props) => {
               <Cast movie={activeMovie} />
               <MyListButton movie={activeMovie} movieId={activeMovie.id} />
             </div>
-            <button onClick={toggleModal} className="absolute right-4 top-4">
+            <button
+              onClick={toggleModal}
+              className="hidden md:absolute md:right-5 md:top-4 md:block md:h-7 md:w-7 md:rounded-full md:bg-white md:text-gray-800"
+            >
               ✗
             </button>
           </div>
         </div>
       </div>
+      <button
+        onClick={toggleModal}
+        className="absolute bottom-[8%] left-1/2 h-7 w-7 -translate-x-2/4 rounded-full bg-white text-gray-800 md:hidden"
+      >
+        ✗
+      </button>
     </dialog>
   );
 };
