@@ -25,7 +25,7 @@ export const Modal = (props) => {
 
   return (
     <dialog className="fixed left-0 top-0 z-10 !mt-0 block h-screen w-full bg-black/50">
-      <div className="relative top-1/2 m-auto w-11/12 -translate-y-2/4 overflow-y-auto rounded-lg bg-slate-900 md:top-2/4 md:w-3/4 md:overflow-hidden">
+      <div className="relative top-[45%] m-auto w-11/12 -translate-y-2/4 overflow-y-auto rounded-lg bg-slate-900 md:top-2/4 md:w-3/4 md:overflow-hidden">
         <div className="h-[78vh] md:flex">
           <div className="shrink-0 grow-0 basis-2/5 overflow-hidden">
             <picture>
@@ -64,7 +64,7 @@ export const Modal = (props) => {
       </div>
       <button
         onClick={toggleModal}
-        className="absolute bottom-[8%] left-1/2 h-7 w-7 -translate-x-2/4 rounded-full bg-white text-gray-800 md:hidden"
+        className="absolute bottom-[12%] left-1/2 h-7 w-7 -translate-x-2/4 rounded-full bg-white text-gray-800 md:hidden"
       >
         ✗
       </button>

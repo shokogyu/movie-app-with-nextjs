@@ -24,9 +24,9 @@ export const Genres = (props) => {
         <span className="text-xs font-bold md:text-base">ジャンル</span>
       </div>
       <div
-        className={`${toggleVisibleClass} absolute bottom-[var(--nav-height-sp)] left-0 h-[calc(100vh-var(--nav-height-sp))] w-screen overflow-y-auto bg-[#09090b]/50 px-6 py-7 backdrop-blur-md transition-all md:visible md:static md:h-auto md:w-auto md:bg-inherit md:p-0 md:opacity-100 md:backdrop-blur-none`}
+        className={`${toggleVisibleClass} absolute bottom-[var(--nav-height-sp)] left-0 h-[calc(100vh-var(--nav-height-sp))] w-screen bg-[#09090b]/50 px-6 py-7 backdrop-blur-md transition-all md:visible md:static md:h-auto md:w-auto md:bg-inherit md:p-0 md:opacity-100 md:backdrop-blur-none`}
       >
-        <ul className="mt-2 grid space-y-4 pl-4 md:space-y-1">
+        <ul className="grid h-full space-y-4 overflow-y-auto pb-5 pl-4 md:mt-2 md:space-y-1">
           {props.genreListData.genres.map((genre) => {
             const isActive = router.asPath.startsWith(`/genre/${genre.id}`) ? true : false;
             return (
